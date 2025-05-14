@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Пости</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <%- include('blocks/header') -%>
+
+    <h1>Список постів</h1>
+
+    <% if (posts.length) { %>
+        <% posts.forEach(post => { %>
+            <div class="post">
+                <h2><%= post.title %> <span class="small">від <%= post.username %></span></h2>
+                <p><%= post.text %></p>
+                <a href="/posts/edit/<%= post._id %>">Редагувати</a>
+                <form action="/posts/delete/<%= post._id %>" method="POST" style="display:inline;">
+                    <button type="submit">Видалити</button>
+                </form>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <p>Постів ще немає.</p>
+    <% } %>
+</body>
+</html>
