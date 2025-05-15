@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 const postRoutes = require('./routes/post-routes');
 const contactRoutes = require('./routes/contact-routes');
 
-
+//ahalamahala
 //шаблонізатор потрібен для того щоб був більший функціонал з html файлом
 app.set('view engine', 'ejs') // Вказуємо, що будемо використовувати шаблонізатор EJS. Метод set призначений для того 
-//щоб встановлювати різні настройки в наш додаток
+//щоб встановлювати різні настройки в наш додаток 
 const db = 'mongodb+srv://Andrii:and123and123@cluster0.lt50un7.mongodb.net/node-blog?retryWrites=true&w=majority&appName=Cluster0';
 mongoose
   .connect(db)
